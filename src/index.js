@@ -7,18 +7,21 @@ let city = {
     country: "Spain"
 };
 
-function Hello(props){
-    console.log(Object.keys(props));
+function Hello({library, message, number}){
     return (
     <div>
-        <h1>Welcome to {props.library}!</h1>
-        <p>{props.message}</p>
-        <p>{Object.keys(props).length} Props Total</p>
+        <h1>Welcome to {library}!</h1>
+        <p>{message}</p>
+        <p>{number} Props Total</p>
     </div>
     );
 }
 
 ReactDOM.render(
-    <Hello library="React" message="Have fun!" number={3}/>,
+    <Hello
+        library="React"
+        message="Use dynamic data!"
+        number={3}
+    />,
   document.getElementById("root")
 );
